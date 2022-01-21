@@ -17,16 +17,31 @@ import random
 pixel_pin = board.D18
 
 # The number of NeoPixels
-num_pixels = 600
+num_pixels = 900
 
 # The order of the pixel colors - RGB or GRB. Some NeoPixels have red and green reversed!
 # For RGBW NeoPixels, simply change the ORDER to RGBW or GRBW.
 ORDER = neopixel.GRB
-
+mode = 0
 pixels = neopixel.NeoPixel(
     pixel_pin, num_pixels, brightness=1, auto_write=False, pixel_order=ORDER
 )
 
+
+while True:
+    wipe(0.05,(200,200,200))
+    wipe(0.05,(0,0,0))
+    clean()
+    blueBlink()
+    blueBlink()
+    blueBlink()
+    blueBlink()
+
+
+def clean():
+    for i in range(num_pixels):
+        pixels[i] = (0,0,0)
+    pixels.show()
 
 def wheel(pos):
     # Input a value 0 to 255 to get a color value.
@@ -58,21 +73,26 @@ def rainbow_cycle(wait):
         pixels.show()
         time.sleep(wait)
 
-counter = 0
-while True:
-    counter+=5
-    fix = 0.1+abs(math.sin(math.radians(counter)))
-    time.sleep(0.05)
-    for i in range(600):
-        if random.randint(0,2)==1:
-            pixels[i]=(30*fix,30*fix,30*fix)
-        else:
-            if i%2==0:
-                pixels[i]=(5*fix,5*fix,150*fix)
+
+
+def wipe(s,c):
+    for counter in range(num_pixels):
+        pixels[i]=c
+        time.sleep(s)
+        pixels.show()
+
+def blueBlink():
+    counter = 0
+    while counter<=300:
+        counter+=1
+        fix = 0.1+abs(math.sin(math.radians(counter)))
+        time.sleep(0.05)
+        for i in range(num_pixels):
+            if random.randint(0,2)==1:
+                pixels[i]=(30*fix,30*fix,30*fix)
             else:
-                pixels[i]=(50*fix,50*fix,180*fix)
-    pixels.show()
-
-    #server.serve()
-#asyncio.run(init_main())
-
+                if i%2==0:
+                    pixels[i]=(5*fix,5*fix,150*fix)
+                else:
+                    pixels[i]=(50*fix,50*fix,180*fix)
+        pixels.show()
