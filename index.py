@@ -111,24 +111,40 @@ def blank(s):
     pixels.show()
     time.sleep(s)
 
-def triangleWipe(num,s):
+def triangleWipe(num,s,c):
     if(num == 0):
         for i in range(0,259):
-            pixels[i] = (200,200,200)
+            pixels[i] = (c[0],c[1],c[2])
+            pixels.show()
+            time.sleep(s)
+        for i in range(0,259):
+            pixels[i] = (0,0,0)
             pixels.show()
             time.sleep(s)
     elif(num==1):
         for i in range(593,852):
-            pixels[i] = (200,200,200)
+            pixels[i] = (c[0],c[1],c[2])
+            pixels.show()
+            time.sleep(s)
+        for i in range(593,852):
+            pixels[i] = (0,0,0)
             pixels.show()
             time.sleep(s)
     elif(num==2):
         for i in range(265,586):
-            pixels[i] = (200,200,200)
+            pixels[i] = (c[0],c[1],c[2])
             pixels.show()
             time.sleep(s)
         for i in range(858,925):
-            pixels[i] = (200,200,200)
+            pixels[i] = (c[0],c[1],c[2])
+            pixels.show()
+            time.sleep(s)
+        for i in range(265,586):
+            pixels[i] = (0,0,0)
+            pixels.show()
+            time.sleep(s)
+        for i in range(858,925):
+            pixels[i] = (0,0,0)
             pixels.show()
             time.sleep(s)
 
@@ -246,20 +262,30 @@ def triangleBreath(num,s,c,t):
 clean()
 while True:
     blank(1)
-    wipe(0.03,(200,200,200))
+
+    triangleWipe(0,0.05,(150,150,200))
+    blank(3)
+    triangleWipe(1,0.05,(150,150,200))
+    blank(3)
+    triangleWipe(2,0.05,(150,150,200))
+    blank(10)
+
+    
+    wipe(0.03,(100,170,200))
     time.sleep(3)
     #blank(5)
     wipe(0.03,(0,0,0))
     blink(0.01,(50,200,100),1)
     blank(5)
-    blink(0.01,(200,200,200),1)
+    blink(0.01,(100,200,200),1)
     blank(3)
-    triangleWipe(0,0.005)
+    blink(0.01,(0,0,200),1)
     blank(3)
-    triangleWipe(1,0.005)
+    blink(0.01,(50,200,100),1)
+    blank(5)
+    blink(0.01,(0,0,0),1)
     blank(3)
-    triangleWipe(2,0.005)
-    blank(10)
+
     triangleBreath(0,0.02,(100,100,120),1)
     triangleBreath(1,0.02,(100,100,120),1)
     triangleBreath(2,0.02,(100,100,120),1)
