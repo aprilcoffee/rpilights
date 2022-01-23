@@ -132,7 +132,7 @@ def triangleBreath(num,s,c,t):
         if(num == 0):
             for i in range(0,259):
                 if random.randint(0,2)==1:
-                    pixels[i]=(255*f,255*f,255*f)
+                    pixels[i]=(math.floor(255*f),math.floor(255*f),math.floor(255*f))
                 else:
                     pixels[i] = (math.floor(c[0]*f),math.floor(c[1]*f),math.floor(c[2]*f))
             pixels.show()
@@ -140,7 +140,7 @@ def triangleBreath(num,s,c,t):
         elif(num==1):
             for i in range(593,852):
                 if random.randint(0,2)==1:
-                    pixels[i]=(255*f,255*f,255*f)
+                    pixels[i]=(math.floor(255*f),math.floor(255*f),math.floor(255*f))
                 else:
                     pixels[i] = (math.floor(c[0]*f),math.floor(c[1]*f),math.floor(c[2]*f))
             pixels.show()
@@ -148,12 +148,12 @@ def triangleBreath(num,s,c,t):
         elif(num==2):
             for i in range(265,586):
                 if random.randint(0,2)==1:
-                    pixels[i]=(255*f,255*f,255*f)
+                    pixels[i]=(math.floor(255*f),math.floor(255*f),math.floor(255*f))
                 else:
                     pixels[i] = (math.floor(c[0]*f),math.floor(c[1]*f),math.floor(c[2]*f))
             for i in range(858,925):
                 if random.randint(0,2)==1:
-                    pixels[i]=(255*f,255*f,255*f)
+                    pixels[i]=(math.floor(255*f),math.floor(255*f),math.floor(255*f))
                 else:
                     pixels[i] = (math.floor(c[0]*f),math.floor(c[1]*f),math.floor(c[2]*f))
             pixels.show()
