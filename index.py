@@ -244,6 +244,7 @@ def triangleBreath(num,s,c,t):
 
 clean()
 while True:
+    blank(5)
     wipe(0.04,(200,200,200))
     time.sleep(3)
     #blank(5)
