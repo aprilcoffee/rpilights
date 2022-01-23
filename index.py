@@ -78,8 +78,12 @@ def breath(s,c,t):
 def wipe(s,c):
     for counter in range(num_pixels):
         print(counter)
-        pixels[counter]=c
-        time.sleep(s)
+        temp = pixels[counter]
+        for i in range(0,255):
+            pixels[counter]=(math.floor(temp[0] +((c[0]-temp[0])*(i/255.))),
+            temp[1] +((c[1]-temp[1])*(i/255.))),
+            temp[2] +((c[2]-temp[2])*(i/255.))))
+            time.sleep(s/255)
         pixels.show()
 
 def blink(s,c,t):
@@ -240,10 +244,10 @@ def triangleBreath(num,s,c,t):
 
 clean()
 while True:
-    wipe(0.03,(200,200,200))
+    wipe(0.04,(200,200,200))
     time.sleep(3)
     #blank(5)
-    wipe(0.03,(0,0,0))
+    wipe(0.04,(0,0,0))
     blink(0.01,(50,200,100),1)
     blank(5)
     blink(0.01,(200,200,200),1)
