@@ -70,7 +70,7 @@ def breath(s,c,t):
         print(c,c[0],c[1],c[2])
         for i in range(num_pixels):
             f = abs(math.sin(math.radians(counter)))
-            pixels[i] = (c[0]*f,c[1]*f,c[2]*f)
+            pixels[i] = (math.floor(c[0]*f),math.floor(c[1]*f),math.floor(c[2]*f))
         pixels.show()
         time.sleep(s)
         counter+=1
@@ -131,19 +131,19 @@ def triangleBreath(num,s,c,t):
         f = abs(math.sin(math.radians(counter)))
         if(num == 0):
             for i in range(0,259):
-                pixels[i] = (c[0]*f,c[1]*f,c[2]*f)
+                pixels[i] = (math.floor(c[0]*f),math.floor(c[1]*f),math.floor(c[2]*f))
             pixels.show()
             time.sleep(s)
         elif(num==1):
             for i in range(593,852):
-                pixels[i] = (c[0]*f,c[1]*f,c[2]*f)
+                pixels[i] = (math.floor(c[0]*f),math.floor(c[1]*f),math.floor(c[2]*f))
             pixels.show()
             time.sleep(s)
         elif(num==2):
             for i in range(265,586):
-                pixels[i] = (c[0]*f,c[1]*f,c[2]*f)
+                pixels[i] = (math.floor(c[0]*f),math.floor(c[1]*f),math.floor(c[2]*f))
             for i in range(858,925):
-                pixels[i] = (c[0]*f,c[1]*f,c[2]*f)
+                pixels[i] = (math.floor(c[0]*f),math.floor(c[1]*f),math.floor(c[2]*f))
             pixels.show()
             time.sleep(s)
         counter+=1
