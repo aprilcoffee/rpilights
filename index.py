@@ -24,7 +24,7 @@ num_pixels = 960
 ORDER = neopixel.GRB
 mode = 0
 pixels = neopixel.NeoPixel(
-    pixel_pin, num_pixels, brightness=0.9, auto_write=False, pixel_order=ORDER
+    pixel_pin, num_pixels, brightness=0.8, auto_write=False, pixel_order=ORDER
 )
 
 
