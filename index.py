@@ -263,10 +263,10 @@ clean()
 while True:
     blank(1)
 
-    wipe(0.03,(100,170,200))
+    wipe(0.1,(100,170,200))
     time.sleep(3)
     #blank(5)
-    wipe(0.03,(0,0,0))
+    wipe(0.1,(0,0,0))
     blink(0.01,(50,200,100),1)
     blank(5)
     blink(0.01,(100,200,200),1)
@@ -288,10 +288,10 @@ while True:
     triangleWipe(2,0.05,(150,150,200))
     blank(10)
 
-    wipe(0.03,(100,170,200))
+    wipe(0.1,(100,170,200))
     time.sleep(3)
     #blank(5)
-    wipe(0.03,(0,0,0))
+    wipe(0.1,(0,0,0))
     blank(3)
 
     breath(0.005,(150,150,150),3)
