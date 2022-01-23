@@ -81,8 +81,8 @@ def wipe(s,c):
         temp = pixels[counter]
         for i in range(0,255):
             pixels[counter]=(math.floor(temp[0] +((c[0]-temp[0])*(i/255.))),
-            temp[1] +((c[1]-temp[1])*(i/255.))),
-            temp[2] +((c[2]-temp[2])*(i/255.))))
+            math.floor(temp[1] +((c[1]-temp[1])*(i/255.))),
+            math.floor(temp[2] +((c[2]-temp[2])*(i/255.))))
             time.sleep(s/255)
         pixels.show()
 
