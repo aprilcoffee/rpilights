@@ -261,15 +261,16 @@ def triangleBreath(num,s,c,t):
 
 clean()
 while True:
-    blank(1)
-    breath(0.005,(170,170,170),5)
-    blank(5)
 
 
-    wipe(0.25,(100,170,200))
+
+    wipe(0.3,(100,170,200))
     time.sleep(3)
     #blank(5)
-    wipe(0.25,(0,0,0))
+    wipe(0.3,(0,0,0))
+    blank(1)
+    breath(0.005,(170,170,170),2)
+    blank(5)
     blink(0.01,(50,200,100),1)
     blank(3)
     blink(0.01,(100,200,200),1)
