@@ -94,6 +94,10 @@ def blink(s,c):
             else:
                 if i%2==0:
                     pixels[i]=(math.floor(c[0]*f),math.floor(c[1]*f),math.floor(c[2]*f))
+                else:
+                    k = math.floor(random.randint(255))
+                    pixels[i]=(math.floor(k*f),math.floor(k*f),math.floor(k*f))
+
         pixels.show()
 
 def blank(s):
