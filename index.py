@@ -85,7 +85,7 @@ def wipe(s,c):
 def blink(s,c):
     counter = 0
     f = 1
-    while counter<=300:
+    while counter<=200:
         print(counter)
         counter+=1
         time.sleep(s)
@@ -166,7 +166,7 @@ def triangleBreath(num,s,c,t):
 
 clean()
 while True:
-    blink(0.01,(100,200,100))
+    blink(0.01,(50,200,50))
     triangleBreath(0,0.01,(100,100,120),1)
     triangleBreath(1,0.01,(100,100,120),1)
     triangleBreath(2,0.01,(100,100,120),1)
