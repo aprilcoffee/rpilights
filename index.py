@@ -150,7 +150,9 @@ def triangleBreath(num,s,c,t):
 clean()
 while True:
 
-    triangleWipe(0,0.001)
+    triangleBreath(0,0.001,(255,255,255),1)
+    triangleBreath(1,0.001,(255,255,255),1)
+    triangleBreath(2,0.001,(255,255,255),1)
     #breath(0.005,(50,50,230),5)
     #blank(5)
     #breath(0.005,(245,121,66),2)
