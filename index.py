@@ -101,14 +101,37 @@ def blueBlink():
 def blank(s):
     clean()
     time.sleep(s)
+
+def triangleWipe(num,s):
+    if(num == 0):
+        for(i in range(0,259)):
+            pixels[i] = (255,255,255)
+            pixels.show()
+            time.sleep(s)
+    elif(num==1):
+        for(i in range(593,852)):
+            pixels[i] = (255,255,255)
+            pixels.show()
+            time.sleep(s)
+    elif(num==2):
+        for(i in range(265,586)):
+            pixels[i] = (255,255,255)
+            pixels.show()
+            time.sleep(s)
+        for(i in range(858,925)):
+            pixels[i] = (255,255,255)
+            pixels.show()
+            time.sleep(s)
 clean()
 while True:
-    breath(0.005,(50,50,230),5)
-    blank(5)
+
+    triangleWipe(0,0.001)
+    #breath(0.005,(50,50,230),5)
+    #blank(5)
     #breath(0.005,(245,121,66),2)
     #blank(5)
-    wipe(0.01,(150,150,150))
-    blank(5)
+    #wipe(0.01,(150,150,150))
+    #blank(5)
     #wipe(0.01,(0,0,0))
     #clean()
     #blueBlink()
@@ -117,5 +140,3 @@ while True:
     #blueBlink()
     #pixels[925]=(255,255,255)
     #pixels.show()
-
-
