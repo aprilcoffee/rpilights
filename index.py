@@ -104,21 +104,21 @@ def blank(s):
 
 def triangleWipe(num,s):
     if(num == 0):
-        for(i in range(0,259)):
+        for i in range(0,259):
             pixels[i] = (255,255,255)
             pixels.show()
             time.sleep(s)
     elif(num==1):
-        for(i in range(593,852)):
+        for i in range(593,852):
             pixels[i] = (255,255,255)
             pixels.show()
             time.sleep(s)
     elif(num==2):
-        for(i in range(265,586)):
+        for i in range(265,586):
             pixels[i] = (255,255,255)
             pixels.show()
             time.sleep(s)
-        for(i in range(858,925)):
+        for i in range(858,925):
             pixels[i] = (255,255,255)
             pixels.show()
             time.sleep(s)
