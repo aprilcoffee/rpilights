@@ -84,11 +84,11 @@ def wipe(s,c):
 
 def blink(s,c,t):
     counter = 0
-    f = abs(math.sin(math.radians(counter)))
     while(counter<=(180*t)):
         print(counter)
         counter+=1
         time.sleep(s)
+        f = abs(math.sin(math.radians(counter)))
         for i in range(num_pixels):
             if random.randint(0,2)==1:
                 pixels[i]=(math.floor(0*f),math.floor(0*f),math.floor(0*f))
@@ -109,21 +109,21 @@ def blank(s):
 def triangleWipe(num,s):
     if(num == 0):
         for i in range(0,259):
-            pixels[i] = (255,255,255)
+            pixels[i] = (200,200,200)
             pixels.show()
             time.sleep(s)
     elif(num==1):
         for i in range(593,852):
-            pixels[i] = (255,255,255)
+            pixels[i] = (200,200,200)
             pixels.show()
             time.sleep(s)
     elif(num==2):
         for i in range(265,586):
-            pixels[i] = (255,255,255)
+            pixels[i] = (200,200,200)
             pixels.show()
             time.sleep(s)
         for i in range(858,925):
-            pixels[i] = (255,255,255)
+            pixels[i] = (200,200,200)
             pixels.show()
             time.sleep(s)
 
@@ -240,22 +240,34 @@ def triangleBreath(num,s,c,t):
 
 clean()
 while True:
-    blink(0.01,(50,200,50),1)
-    triangleBreath(0,0.01,(100,100,120),1)
-    triangleBreath(1,0.01,(100,100,120),1)
-    triangleBreath(2,0.01,(100,100,120),1)
-    triangleBreath(3,0.01,(100,100,120),1)
-    triangleBreath(4,0.01,(100,100,120),1)
-    triangleBreath(5,0.01,(100,100,120),1)
-    triangleBreath(6,0.01,(100,100,120),1)
-
-    #breath(0.005,(50,50,230),5)
-    #blank(5)
+    wipe(0.01,(255,255,255))
+    blank(5)
+    wipe(0.01,(0,0,0))
+    blink(0.01,(50,200,100),1)
+    blank(5)
+    blink(0.01,(200,200,200),1)
+    triangleWipe(0,0.005)
+    triangleWipe(1,0.005)
+    triangleWipe(2,0.005)
+    blank(10)
+    triangleBreath(0,0.02,(100,100,120),1)
+    triangleBreath(1,0.02,(100,100,120),1)
+    triangleBreath(2,0.02,(100,100,120),1)
+    blank(5)
+    triangleBreath(3,0.02,(100,100,120),1)
+    blank(2)
+    triangleBreath(4,0.02,(100,100,120),1)
+    blank(2)
+    triangleBreath(5,0.02,(100,100,120),1)
+    blank(2)
+    triangleBreath(6,0.02,(100,100,120),1)
+    blank(2)
+    breath(0.005,(50,50,230),5)
+    blank(5)
     #breath(0.005,(245,121,66),2)
     #blank(5)
     #wipe(0.01,(150,150,150))
     #blank(5)
-    #wipe(0.01,(0,0,0))
     #clean()
     #blueBlink()
     #blueBlink()
