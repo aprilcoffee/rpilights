@@ -82,20 +82,18 @@ def wipe(s,c):
         time.sleep(s)
         pixels.show()
 
-def blueBlink():
+def blink(s,c):
     counter = 0
+    f = 1
     while counter<=300:
         counter+=1
-        fix = 0.1+abs(math.sin(math.radians(counter)))
-        time.sleep(0.05)
+        time.sleep(s)
         for i in range(num_pixels):
             if random.randint(0,2)==1:
-                pixels[i]=(30*fix,30*fix,30*fix)
+                pixels[i]=(math.floor(255*f),math.floor(255*f),math.floor(255*f))
             else:
                 if i%2==0:
-                    pixels[i]=(5*fix,5*fix,150*fix)
-                else:
-                    pixels[i]=(50*fix,50*fix,180*fix)
+                    pixels[i]=(math.floor(c[0]*f),math.floor(c[1]*f),math.floor(c[2]*f))
         pixels.show()
 
 def blank(s):
@@ -159,12 +157,14 @@ def triangleBreath(num,s,c,t):
             pixels.show()
             time.sleep(s)
         counter+=1
+
+
 clean()
 while True:
-
-    triangleBreath(0,0.01,(100,100,120),1)
-    triangleBreath(1,0.01,(100,100,120),1)
-    triangleBreath(2,0.01,(100,100,120),1)
+    blink(0.01,(100,100,200))
+    #triangleBreath(0,0.01,(100,100,120),1)
+    #triangleBreath(1,0.01,(100,100,120),1)
+    #triangleBreath(2,0.01,(100,100,120),1)
 
     #breath(0.005,(50,50,230),5)
     #blank(5)
