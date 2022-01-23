@@ -166,9 +166,9 @@ def triangleBreath(num,s,c,t):
 clean()
 while True:
     blink(0.01,(100,100,200))
-    #triangleBreath(0,0.01,(100,100,120),1)
-    #triangleBreath(1,0.01,(100,100,120),1)
-    #triangleBreath(2,0.01,(100,100,120),1)
+    triangleBreath(0,0.01,(100,100,120),1)
+    triangleBreath(1,0.01,(100,100,120),1)
+    triangleBreath(2,0.01,(100,100,120),1)
 
     #breath(0.005,(50,50,230),5)
     #blank(5)
