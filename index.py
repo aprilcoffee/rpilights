@@ -24,7 +24,7 @@ num_pixels = 960
 ORDER = neopixel.GRB
 mode = 0
 pixels = neopixel.NeoPixel(
-    pixel_pin, num_pixels, brightness=0.8, auto_write=False, pixel_order=ORDER
+    pixel_pin, num_pixels, brightness=0.7, auto_write=False, pixel_order=ORDER
 )
 
 
@@ -240,27 +240,31 @@ def triangleBreath(num,s,c,t):
 
 clean()
 while True:
-    wipe(0.01,(255,255,255))
-    blank(5)
-    wipe(0.01,(0,0,0))
+    wipe(0.03,(200,200,200))
+    time.sleep(3)
+    #blank(5)
+    wipe(0.03,(0,0,0))
     blink(0.01,(50,200,100),1)
     blank(5)
     blink(0.01,(200,200,200),1)
+    blank(3)
     triangleWipe(0,0.005)
+    blank(3)
     triangleWipe(1,0.005)
+    blank(3)
     triangleWipe(2,0.005)
     blank(10)
     triangleBreath(0,0.02,(100,100,120),1)
     triangleBreath(1,0.02,(100,100,120),1)
     triangleBreath(2,0.02,(100,100,120),1)
     blank(5)
-    triangleBreath(3,0.02,(100,100,120),1)
+    triangleBreath(3,0.05,(100,100,120),1)
     blank(2)
-    triangleBreath(4,0.02,(100,100,120),1)
+    triangleBreath(4,0.05,(100,100,120),1)
     blank(2)
-    triangleBreath(5,0.02,(100,100,120),1)
+    triangleBreath(5,0.05,(100,100,120),1)
     blank(2)
-    triangleBreath(6,0.02,(100,100,120),1)
+    triangleBreath(6,0.05,(100,100,120),1)
     blank(2)
     breath(0.005,(50,50,230),5)
     blank(5)
