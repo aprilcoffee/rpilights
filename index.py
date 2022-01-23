@@ -131,28 +131,40 @@ def triangleBreath(num,s,c,t):
         f = abs(math.sin(math.radians(counter)))
         if(num == 0):
             for i in range(0,259):
-                pixels[i] = (math.floor(c[0]*f),math.floor(c[1]*f),math.floor(c[2]*f))
+                if random.randint(0,2)==1:
+                    pixels[i]=(255*fix,255*fix,255*fix)
+                else:
+                    pixels[i] = (math.floor(c[0]*f),math.floor(c[1]*f),math.floor(c[2]*f))
             pixels.show()
             time.sleep(s)
         elif(num==1):
             for i in range(593,852):
-                pixels[i] = (math.floor(c[0]*f),math.floor(c[1]*f),math.floor(c[2]*f))
+                if random.randint(0,2)==1:
+                    pixels[i]=(255*fix,255*fix,255*fix)
+                else:
+                    pixels[i] = (math.floor(c[0]*f),math.floor(c[1]*f),math.floor(c[2]*f))
             pixels.show()
             time.sleep(s)
         elif(num==2):
             for i in range(265,586):
-                pixels[i] = (math.floor(c[0]*f),math.floor(c[1]*f),math.floor(c[2]*f))
+                if random.randint(0,2)==1:
+                    pixels[i]=(255*fix,255*fix,255*fix)
+                else:
+                    pixels[i] = (math.floor(c[0]*f),math.floor(c[1]*f),math.floor(c[2]*f))
             for i in range(858,925):
-                pixels[i] = (math.floor(c[0]*f),math.floor(c[1]*f),math.floor(c[2]*f))
+                if random.randint(0,2)==1:
+                    pixels[i]=(255*fix,255*fix,255*fix)
+                else:
+                    pixels[i] = (math.floor(c[0]*f),math.floor(c[1]*f),math.floor(c[2]*f))
             pixels.show()
             time.sleep(s)
         counter+=1
 clean()
 while True:
 
-    triangleBreath(0,0.001,(255,0,0),1)
-    triangleBreath(1,0.001,(0,255,0),1)
-    triangleBreath(2,0.001,(0,0,255),1)
+    triangleBreath(0,0.001,(150,150,150),1)
+    triangleBreath(1,0.001,(150,150,150),1)
+    triangleBreath(2,0.001,(150,150,150),1)
 
     #breath(0.005,(50,50,230),5)
     #blank(5)
