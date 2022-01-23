@@ -82,10 +82,10 @@ def wipe(s,c):
         time.sleep(s)
         pixels.show()
 
-def blink(s,c):
+def blink(s,c,t):
     counter = 0
-    f = 1
-    while counter<=200:
+    f = abs(math.sin(math.radians(counter)))
+    while(counter<=(180*t)):
         print(counter)
         counter+=1
         time.sleep(s)
@@ -161,15 +161,93 @@ def triangleBreath(num,s,c,t):
                     pixels[i] = (math.floor(c[0]*f),math.floor(c[1]*f),math.floor(c[2]*f))
             pixels.show()
             time.sleep(s)
+
+        elif(num==3): #0+1
+            for i in range(0,259):
+                if random.randint(0,2)==1:
+                    pixels[i]=(math.floor(255*f),math.floor(255*f),math.floor(255*f))
+                else:
+                    pixels[i] = (math.floor(c[0]*f),math.floor(c[1]*f),math.floor(c[2]*f))
+            for i in range(593,852):
+                if random.randint(0,2)==1:
+                    pixels[i]=(math.floor(255*f),math.floor(255*f),math.floor(255*f))
+                else:
+                    pixels[i] = (math.floor(c[0]*f),math.floor(c[1]*f),math.floor(c[2]*f))
+            pixels.show()
+            time.sleep(s)
+        elif(num==4): #0+2
+            for i in range(0,259):
+                if random.randint(0,2)==1:
+                    pixels[i]=(math.floor(255*f),math.floor(255*f),math.floor(255*f))
+                else:
+                    pixels[i] = (math.floor(c[0]*f),math.floor(c[1]*f),math.floor(c[2]*f))
+            for i in range(265,586):
+                if random.randint(0,2)==1:
+                    pixels[i]=(math.floor(255*f),math.floor(255*f),math.floor(255*f))
+                else:
+                    pixels[i] = (math.floor(c[0]*f),math.floor(c[1]*f),math.floor(c[2]*f))
+            for i in range(858,925):
+                if random.randint(0,2)==1:
+                    pixels[i]=(math.floor(255*f),math.floor(255*f),math.floor(255*f))
+                else:
+                    pixels[i] = (math.floor(c[0]*f),math.floor(c[1]*f),math.floor(c[2]*f))
+            pixels.show()
+            time.sleep(s)
+        elif(num==5): #1+2
+            for i in range(593,852):
+                if random.randint(0,2)==1:
+                    pixels[i]=(math.floor(255*f),math.floor(255*f),math.floor(255*f))
+                else:
+                    pixels[i] = (math.floor(c[0]*f),math.floor(c[1]*f),math.floor(c[2]*f))
+            for i in range(265,586):
+                if random.randint(0,2)==1:
+                    pixels[i]=(math.floor(255*f),math.floor(255*f),math.floor(255*f))
+                else:
+                    pixels[i] = (math.floor(c[0]*f),math.floor(c[1]*f),math.floor(c[2]*f))
+            for i in range(858,925):
+                if random.randint(0,2)==1:
+                    pixels[i]=(math.floor(255*f),math.floor(255*f),math.floor(255*f))
+                else:
+                    pixels[i] = (math.floor(c[0]*f),math.floor(c[1]*f),math.floor(c[2]*f))
+            pixels.show()
+            time.sleep(s)
+
+        elif(num==6): #0+1+2
+            for i in range(0,259):
+                if random.randint(0,2)==1:
+                    pixels[i]=(math.floor(255*f),math.floor(255*f),math.floor(255*f))
+                else:
+                    pixels[i] = (math.floor(c[0]*f),math.floor(c[1]*f),math.floor(c[2]*f))
+            for i in range(593,852):
+                if random.randint(0,2)==1:
+                    pixels[i]=(math.floor(255*f),math.floor(255*f),math.floor(255*f))
+                else:
+                    pixels[i] = (math.floor(c[0]*f),math.floor(c[1]*f),math.floor(c[2]*f))
+            for i in range(265,586):
+                if random.randint(0,2)==1:
+                    pixels[i]=(math.floor(255*f),math.floor(255*f),math.floor(255*f))
+                else:
+                    pixels[i] = (math.floor(c[0]*f),math.floor(c[1]*f),math.floor(c[2]*f))
+            for i in range(858,925):
+                if random.randint(0,2)==1:
+                    pixels[i]=(math.floor(255*f),math.floor(255*f),math.floor(255*f))
+                else:
+                    pixels[i] = (math.floor(c[0]*f),math.floor(c[1]*f),math.floor(c[2]*f))
+            pixels.show()
+            time.sleep(s)
         counter+=1
 
 
 clean()
 while True:
-    blink(0.01,(50,200,50))
+    blink(0.001,(50,200,50),1)
     triangleBreath(0,0.01,(100,100,120),1)
     triangleBreath(1,0.01,(100,100,120),1)
     triangleBreath(2,0.01,(100,100,120),1)
+    triangleBreath(3,0.01,(100,100,120),1)
+    triangleBreath(4,0.01,(100,100,120),1)
+    triangleBreath(5,0.01,(100,100,120),1)
+    triangleBreath(6,0.01,(100,100,120),1)
 
     #breath(0.005,(50,50,230),5)
     #blank(5)
