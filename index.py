@@ -31,7 +31,7 @@ pixels = neopixel.NeoPixel(
 def clean():
     for i in range(num_pixels):
         pixels[i] = (0,0,0)
-    pixels.show()
+
 
 def wheel(pos):
     # Input a value 0 to 255 to get a color value.
@@ -70,7 +70,7 @@ def breath(s,c,t):
         print(c,c[0],c[1],c[2])
         for i in range(num_pixels):
             f = abs(math.sin(math.radians(counter)))
-            pixels[i] = (c[0],c[1],c[2])
+            pixels[i] = (c[0]*f,c[1]*f,c[2]*f)
         pixels.show()
         time.sleep(s)
         counter+=1
@@ -100,6 +100,7 @@ def blueBlink():
 
 def blank(s):
     clean()
+    pixels.show()
     time.sleep(s)
 
 def triangleWipe(num,s):
@@ -122,6 +123,30 @@ def triangleWipe(num,s):
             pixels[i] = (255,255,255)
             pixels.show()
             time.sleep(s)
+
+def triangleBreath(num,s,c,t):
+    counter = 0
+    while(counter<=(180*t)):
+        clean()
+        f = abs(math.sin(math.radians(counter)))
+        if(num == 0):
+            for i in range(0,259):
+                pixels[i] = (c[0]*f,c[1]*f,c[2]*f)
+            pixels.show()
+            time.sleep(s)
+        elif(num==1):
+            for i in range(593,852):
+                pixels[i] = (c[0]*f,c[1]*f,c[2]*f)
+            pixels.show()
+            time.sleep(s)
+        elif(num==2):
+            for i in range(265,586):
+                pixels[i] = (c[0]*f,c[1]*f,c[2]*f)
+            for i in range(858,925):
+                pixels[i] = (c[0]*f,c[1]*f,c[2]*f)
+            pixels.show()
+            time.sleep(s)
+        counter+=1
 clean()
 while True:
 
