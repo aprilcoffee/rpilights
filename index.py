@@ -17,25 +17,15 @@ import random
 pixel_pin = board.D18
 
 # The number of NeoPixels
-num_pixels = 900
+num_pixels = 960
 
 # The order of the pixel colors - RGB or GRB. Some NeoPixels have red and green reversed!
 # For RGBW NeoPixels, simply change the ORDER to RGBW or GRBW.
 ORDER = neopixel.GRB
 mode = 0
 pixels = neopixel.NeoPixel(
-    pixel_pin, num_pixels, brightness=1, auto_write=False, pixel_order=ORDER
+    pixel_pin, num_pixels, brightness=0.7, auto_write=False, pixel_order=ORDER
 )
-
-
-while True:
-    wipe(0.05,(200,200,200))
-    wipe(0.05,(0,0,0))
-    clean()
-    blueBlink()
-    blueBlink()
-    blueBlink()
-    blueBlink()
 
 
 def clean():
@@ -73,11 +63,22 @@ def rainbow_cycle(wait):
         pixels.show()
         time.sleep(wait)
 
+def breath(s,c,t):
+    counter = 0
 
+    while(counter<=(180*t)):
+        print(c,c[0],c[1],c[2])
+        for i in range(num_pixels):
+            f = abs(math.sin(math.radians(counter)))
+            pixels[i] = (c[0],c[1],c[2])
+        pixels.show()
+        time.sleep(s)
+        counter+=1
 
 def wipe(s,c):
     for counter in range(num_pixels):
-        pixels[i]=c
+        print(counter)
+        pixels[counter]=c
         time.sleep(s)
         pixels.show()
 
@@ -96,3 +97,25 @@ def blueBlink():
                 else:
                     pixels[i]=(50*fix,50*fix,180*fix)
         pixels.show()
+
+def blank(s):
+    clean()
+    time.sleep(s)
+clean()
+while True:
+    breath(0.005,(50,50,230),5)
+    blank(5)
+    #breath(0.005,(245,121,66),2)
+    #blank(5)
+    wipe(0.01,(150,150,150))
+    blank(5)
+    #wipe(0.01,(0,0,0))
+    #clean()
+    #blueBlink()
+    #blueBlink()
+    #blueBlink()
+    #blueBlink()
+    #pixels[925]=(255,255,255)
+    #pixels.show()
+
+
