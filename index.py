@@ -90,7 +90,7 @@ def blink(s,c):
         time.sleep(s)
         for i in range(num_pixels):
             if random.randint(0,2)==1:
-                pixels[i]=(math.floor(255*f),math.floor(255*f),math.floor(255*f))
+                pixels[i]=(math.floor(0*f),math.floor(0*f),math.floor(0*f))
             else:
                 if i%2==0:
                     pixels[i]=(math.floor(c[0]*f),math.floor(c[1]*f),math.floor(c[2]*f))
